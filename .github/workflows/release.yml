@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Executa apenas com tags semânticas
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Lint/Test (opcional)
+        run: echo "Sem testes configurados"
+
+      - name: Deploy para Render
+        run: |
+          curl -X POST https://api.render.com/deploy/YOUR_DEPLOY_HOOK_URL
