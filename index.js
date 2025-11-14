@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Rota principal
 app.get('/', (req, res) => {
-  res.json({ message: 'API funcionando com CORS!' });
+  res.json({ message: 'Palmeiras não tem mundial!!!' });
 });
 
 // Inicialização do servidor
