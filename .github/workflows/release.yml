@@ -26,4 +26,5 @@ jobs:
 
       - name: Deploy para Render
         run: |
-          curl -X POST https://api.render.com/deploy/YOUR_DEPLOY_HOOK_URL
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
